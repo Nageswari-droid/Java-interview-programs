@@ -1,0 +1,30 @@
+package com;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String str = "PROGRAM";
+		int strLength = str.length();
+		int midPoint = strLength / 2;
+		
+		System.out.print(midPoint);
+	}
+
+}
+
+
+/*PROGRAM*/
+
+/*
+              G
+            GR
+          GRA
+       GRAM
+     GRAMP
+   GRAMPR
+GRAMPRO
+
+
+
+
+*/

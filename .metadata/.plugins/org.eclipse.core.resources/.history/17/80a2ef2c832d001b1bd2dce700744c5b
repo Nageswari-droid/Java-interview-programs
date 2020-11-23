@@ -1,0 +1,52 @@
+package com;
+
+import java.util.*;
+
+public class MatrixClass {
+	public static void main(String args[]) {
+		Scanner obj = new Scanner(System.in);
+
+		int[][] biggerMat = new int[4][4];
+		int[][] smallerMat = new int[3][3];
+		
+		int[][] tempMat = new int[3][3];
+
+		int count = 0;
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				biggerMat[i][j] = obj.nextInt();
+			}
+		}
+
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				smallerMat[i][j] = obj.nextInt();
+			}
+		}
+
+		for(int i = 0 ; i < 4 ; i++) {
+			for(int j = 0 ; j < 4 ; j++) {
+				for (int k = 0; k < 3; k++) {
+					for(int l = 0 ; l < 3 ; l++) {
+						tempMat[k][l] = biggerMat[k][l];
+					}
+				}
+				
+				for (int k = 0; k < 3; k++) {
+					for(int l = 0 ; l < 3 ; l++) {
+						if(tempMat[k][l] == smallerMat[k][l]) {
+							count++;
+						}
+					}
+				}
+				
+				if(count == 9) {
+					System.out.print("True");
+					break;
+				}
+			}
+		}
+	}
+
+}

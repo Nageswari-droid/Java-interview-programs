@@ -1,0 +1,14 @@
+package com;
+
+public class SquareClass {
+	public static void main(String args[]) {
+		int start = 4, stop =200;
+		
+		int startSqrt = (int)Math.ceil(Math.sqrt(start));;
+		int stopSqrt = (int)Math.ceil(Math.sqrt(stop));;
+		
+		for(int i = startSqrt; i <= stopSqrt ; i++) {
+			System.out.print((i * i) + " ");
+		}
+	}
+}

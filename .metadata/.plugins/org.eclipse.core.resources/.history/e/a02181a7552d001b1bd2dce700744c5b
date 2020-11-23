@@ -1,0 +1,16 @@
+package com;
+
+public class SquareClass {
+	public static void main(String args[]) {
+		int start = 2, stop =200;
+		
+		int startSqrt = (int)Math.sqrt(start);
+		int stopSqrt = (int)Math.sqrt(stop);
+		
+//		System.out.print(startSqrt + " " + stopSqrt);
+		
+		for(int i = startSqrt + 1; i <= stopSqrt ; i++) {
+			System.out.print((i * i) + " ");
+		}
+	}
+}

@@ -1,0 +1,41 @@
+package com;
+
+import java.util.*;
+
+public class AlternateClass {
+	
+	public static void main(String args[]) {
+		int[] numArr = {5,2,8,7,4,3,9};
+		int max = 0 , min = numArr[0];
+		int maxIndex = 0, minIndex = 0, temp;
+		
+		List<Integer> resultantArr = new ArrayList<>();
+		List<Integer> sortedArr = new ArrayList<>();
+		
+		for(int i = 0 ; i < numArr.length ; i++) {
+			if(numArr[i] > max) {
+				max = numArr[i];
+				maxIndex = i;
+			}
+			if(numArr[i] < min) {
+				minIndex = i;
+				min = numArr[i];
+			}
+		}
+		
+		for( int i = 0 ; i < numArr.length ; i++ ) {
+			for( int j = 0 ; j < numArr.length ; j++ ) {
+				if(numArr[i] > numArr[j]) {
+					temp = numArr[i];
+					numArr[i] = numArr[j];
+					numArr[j] = temp;
+				}
+			}
+		}
+		
+		for(int i = 0 ; i < numArr.length ; i++) {
+			System.out.print(numArr[i]);
+		}
+		
+	}
+}

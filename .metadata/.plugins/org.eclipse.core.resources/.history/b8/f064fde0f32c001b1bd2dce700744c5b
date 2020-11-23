@@ -1,0 +1,21 @@
+package com;
+
+import java.util.*;
+
+public class CacheClass {
+	public static void main(String args[]) {
+		int num = 2;
+		int numQuery = 7;
+		String queries = "SET 1 2 SET 2 3 SET 1 5 SET 4 5 SET 6 7 GET 4 GET 1";
+		String[] strArr = queries.split(" ");
+		
+		Map<Integer, Integer> setMap = new HashMap<Integer,Integer>();  
+		
+		for(int i = 0 ; i < strArr.length ; i = i + 3) {
+			if(strArr[i] == "SET") {
+				setMap.put(Integer.parseInt(strArr[i+1]), Integer.parseInt(strArr[i+2]));
+				System.out.println(setMap);
+			}
+		}
+	}
+}
