@@ -7,7 +7,7 @@ public class MatrixTransform {
 
 		Scanner obj = new Scanner(System.in);
 
-		int row = 3, column = 3;
+		int row = 4, column = 4;
 		int count = 0;
 		int flag = 0;
 
