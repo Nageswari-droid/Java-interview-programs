@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 public class CacheClass {
 	public static void main(String args[]) {
-		int num = 3;
+		int num = 2;
 		int jPointer = 0;
 		String queries = "SET 1 2 SET 3 4 SET 4 5 GET 4 GET 1 GET 3";
 		String[] strArr = queries.split(" ");
@@ -35,6 +35,7 @@ public class CacheClass {
 			for (Entry m : setMap.entrySet()) {
 				if(!setMap.containsKey(key.get(i))) {
 					System.out.print("-1 ");
+					break;
 				}
 				else if((int) m.getKey() == key.get(i)) {
 					System.out.print(m.getValue() + " ");
