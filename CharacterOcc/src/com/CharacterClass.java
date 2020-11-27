@@ -8,7 +8,7 @@ public class CharacterClass {
 		for(int i = 1 ; i <= num ; i++) {
 			
 			int temp = i;
-			int rem;
+			int rem = 0;
 			
 			while(temp != 0) {
 				rem = temp % 10;

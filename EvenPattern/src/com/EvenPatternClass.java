@@ -2,7 +2,7 @@ package com;
 
 public class EvenPatternClass {
 	public static void main(String args[]) {
-		int num = 8;
+		int num = 6;
 
 		int[] resultant = new int[num];
 

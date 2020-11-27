@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 public class CacheClass {
 	public static void main(String args[]) {
-		int num = 2;
+		int num = 3;
 		int jPointer = 0;
 		String queries = "SET 1 2 SET 3 4 SET 4 5 GET 4 GET 1 GET 3";
 		String[] strArr = queries.split(" ");
