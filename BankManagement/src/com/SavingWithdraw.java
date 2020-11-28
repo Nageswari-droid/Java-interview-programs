@@ -37,22 +37,6 @@ public class SavingWithdraw {
 				case 2: {
 					CusDetails.withdraw(accNumber, amt);
 					OutputClass.welcomeScreen();
-//					if (result == 0) {
-//						System.out.println("Do you want to change your withdrawal amount?(Y/N)");
-//						char opt = obj.next().charAt(0);
-//
-//						if (opt == 'Y') {
-//							System.out.println("Enter the amount : ");
-//							int amount = obj.nextInt();
-//							result = CusDetails.withdraw(accNumber, amount);
-//						} else {
-//							System.out.println("Thank you!");
-//							OutputClass.welcomeScreen();
-//						}
-//					} else {
-//						System.out.println("Amount withdrew successfully!");
-//						System.out.println("Current balance : " + result);
-//					}
 
 					break;
 				}
