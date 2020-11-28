@@ -16,7 +16,7 @@ public class SequenceClass {
 		str = "11";
 		
 		for (int i = 3; i <= num; i++) {
-			str = str;
+			str = str + '0';
 			String result = "";
 			int count = 1;
 			

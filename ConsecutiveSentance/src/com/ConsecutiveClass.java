@@ -2,7 +2,7 @@ package com;
 
 public class ConsecutiveClass {
 	public static void main(String args[]) {
-		String str = "AAA EEE EEE EEE CCC DDDDDD EEE EEE EEE EEE";
+		String str = "AAA AAA AAA EEE EEE EEE EEE CCC DDDDDD EEE EEE EEE EEE EEE EEE EEE";
 		String word = "EEE";
 		
 		String strArr[] = str.split(" ");
@@ -10,7 +10,7 @@ public class ConsecutiveClass {
 		for(int i = 0 ; i < strArr.length ; i++) {
 			int count = 0;
 			for(int j = i ; j < i + 3 ; j++) {
-				if(i > strArr.length - 2) {
+				if(i > strArr.length - 3) {
 					break;
 				}
 				if(word.equals(strArr[j])) {
