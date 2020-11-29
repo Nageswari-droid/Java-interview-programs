@@ -52,6 +52,7 @@ public class CusDetails {
 						System.out.println("Thank you!");
 						break;
 					} else {
+						temp = 1;
 						System.out.println("Invalid choice!");
 					}
 				}
