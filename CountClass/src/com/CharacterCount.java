@@ -4,7 +4,7 @@ public class CharacterCount {
 
 	public static void main(String args[]) {
 
-		String input = "affffffffffbbbbbbbbbbbbbbbbbbbbccccccccccccccce";
+		String input = "aaaabbccccffe";
 		String result = "";
 
 		int count = 1;
