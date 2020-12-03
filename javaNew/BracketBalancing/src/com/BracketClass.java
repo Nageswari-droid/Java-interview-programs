@@ -5,7 +5,7 @@ import java.util.*;
 public class BracketClass {
 	public static void main(String args[]) {
 
-		String input = "{()}]]";
+		String input = "{[{{}]}}";
 		int i = 0;
 
 		Stack<Character> stk = new Stack<>();

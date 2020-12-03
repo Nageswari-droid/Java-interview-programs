@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 public class SubStringClass {
 	public static void main(String args[]) {
 
-		String str = "abccbaef";
+		String str = "abbaeae";
 		String reverseStr = "";
 
 		LinkedHashMap<String, String> palindrome = new LinkedHashMap<>();
@@ -37,6 +37,8 @@ public class SubStringClass {
 		for(Entry<String, String> map : palindrome.entrySet()) {
 			System.out.println(map.getKey() + " " + map.getValue());
 		}
+		
+		System.out.println("Substring palindrome count : " + palindrome.size());
 	}
 
 	public static boolean reverseMethod(String reverse) {
