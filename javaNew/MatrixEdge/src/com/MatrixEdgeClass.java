@@ -2,10 +2,10 @@ package com;
 
 public class MatrixEdgeClass {
 	public static void main(String args[]) {
-		int row = 3;
+		int row = 4;
 		int column = 3;
 
-		int[][] mat = { { 10, 5, 4 }, { 12, 8, 14 }, { 1, 3, 18 } };
+		int[][] mat = { { 10, 25, 14 }, { 12, 28, 14 }, { 21, 26, 18 }, { 7, 8, 9 } };
 
 		int[][] resultMat = new int[row][column];
 

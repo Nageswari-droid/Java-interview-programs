@@ -5,7 +5,7 @@ public class StringShiftClass {
 
 		String str = "sky Is Blue!";
 		char[] tempStrArr = str.toCharArray();
-		int shift = 3;
+		int shift = 4;
 
 		int sum = 0;
 
