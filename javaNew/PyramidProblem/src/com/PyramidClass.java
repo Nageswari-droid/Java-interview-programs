@@ -35,7 +35,7 @@ public class PyramidClass {
 			}
 			
 			for(int j = 0 ; j < resultArr.length ; j++) {
-				System.out.print(resultArr[j]);
+				System.out.print(resultArr[j] + " ");
 				resultArr[j] = " ";
 			}
 			System.out.println();
