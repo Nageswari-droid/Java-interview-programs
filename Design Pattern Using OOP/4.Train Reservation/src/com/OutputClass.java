@@ -29,8 +29,19 @@ public class OutputClass {
 
 	public void printInvalidChoice(String err) throws IOException {
 		System.out.println();
-		System.out.println("Invalid" + err +"choice");
+		System.out.println("Invalid " + err +" choice");
 		System.out.println("Do you want to change?(Y/N)");
 		System.out.println();
+	}
+	
+	public void printThankYou() throws IOException{
+		System.out.println("Thank you, Welcome again...");
+		printUserChoices();
+	}
+	
+	public void wrongChoice(String err) throws IOException{
+		if(err.equals("coach")) {
+			System.out.println("Enter coach preference\\n1.Ac\\n2.Non-AC\\n3.Seater");
+		}
 	}
 }

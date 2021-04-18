@@ -27,16 +27,4 @@ public class InputClass {
 		}
 		}
 	}
-
-	public int coachPreference() throws IOException {
-		Scanner obj = new Scanner(System.in);
-		char choice = obj.next().charAt(0);
-
-		if (Character.toLowerCase(choice) == 'y') {
-
-		} else if (Character.toLowerCase(choice) == 'n') {
-		}
-
-		return 0;
-	}
 }

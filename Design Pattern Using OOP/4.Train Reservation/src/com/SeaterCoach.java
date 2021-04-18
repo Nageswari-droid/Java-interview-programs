@@ -1,14 +1,32 @@
 package com;
 
-public class SeaterCoach extends Coach {
-	private static int confirmTicket = 60;
-	private static int waitingList = 10;
+import java.io.IOException;
 
-	public void ticketCount() {
-		if (confirmTicket != 0) {
-			confirmTicket = super.ticketCount(confirmTicket);
-		} else {
-			waitingList = super.ticketCount(waitingList);
+public class SeaterCoach extends Coach {
+	static int confirmTicket = 2;
+	static int waitingList = 2;
+
+	public static String ticketCount() throws IOException {
+		if (confirmTicket != 0 || waitingList != 0) {
+			if (confirmTicket != 0) {
+				confirmTicket = decrementTicketCount(confirmTicket);
+				System.out.println(confirmTicket);
+				return "Ticket Confirmed";
+			} else {
+				waitingList = decrementTicketCount(waitingList);
+				return "Waiting List";
+			}
+		}
+
+		else {
+			if(NonAcCoach.confirmTicket != 0 || NonAcCoach.waitingList != 0 || AcCoach.confirmTicket != 0 || AcCoach.waitingList != 0) {
+				System.out.println("Sorry no tickets available in Non-Ac Coach. Try again some other day.");
+				return " ";
+			}
+			else {
+				System.out.println("No tickets available in any coach. Try again some other day.");
+				return "No";
+			}
 		}
 	}
 }

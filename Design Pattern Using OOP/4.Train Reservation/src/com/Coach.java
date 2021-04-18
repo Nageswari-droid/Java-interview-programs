@@ -2,8 +2,8 @@ package com;
 
 public class Coach {
 
-	int ticketCount(int seatCount) {
-		return 0;
+	static int decrementTicketCount(int seatCount) {
+		return seatCount - 1;
 	}
 
 }

@@ -3,14 +3,14 @@ package com;
 public class PassengerDB {
 
 	String name = "";
-	int coach;
+	String coach;
 	int age;
 	char fromStation = ' ';
 	char toStation = ' ';
 	long PNR;
 	String status = "";
 
-	public PassengerDB(String name, int age, int coach, char fromStation, char toStation, long PNR, String status) {
+	public PassengerDB(String name, int age, String coach, char fromStation, char toStation, long PNR, String status) {
 		this.name = name;
 		this.coach = coach;
 		this.age = age;
@@ -28,7 +28,7 @@ public class PassengerDB {
 		return age;
 	}
 
-	public int getCoach() {
+	public String getCoach() {
 		return coach;
 	}
 
@@ -42,5 +42,9 @@ public class PassengerDB {
 	
 	public String getStatus() {
 		return status;
+	}
+	
+	public long getPNR() {
+		return PNR;
 	}
 }
