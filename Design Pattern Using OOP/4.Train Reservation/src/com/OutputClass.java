@@ -42,6 +42,7 @@ public class OutputClass {
 	public void wrongChoice(String err) throws IOException{
 		if(err.equals("coach")) {
 			System.out.println("Enter coach preference\\n1.Ac\\n2.Non-AC\\n3.Seater");
+			System.out.println();
 		}
 	}
 }
