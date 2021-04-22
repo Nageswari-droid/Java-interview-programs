@@ -11,7 +11,6 @@ public class AcCoach extends Coach {
 		if (confirmTicket != 0 || waitingList != 0) {
 			if (confirmTicket != 0) {
 				confirmTicket = decrementTicketCount(confirmTicket);
-				System.out.println(confirmTicket);
 				return "Ticket Confirmed";
 			} else {
 				waitingList = decrementTicketCount(waitingList);

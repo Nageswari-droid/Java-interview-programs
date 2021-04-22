@@ -71,6 +71,7 @@ public class Booking {
 
 	public static void checkTicketAvailability(String name, int age, String coachName, char fromStation, char toStation,
 			long PNR, String status) throws IOException {
+		InputClass inp = new InputClass();
 		if (!status.equals(" ") && !status.equals("No")) {
 			PassengerDB db = new PassengerDB(name, age, coachName, fromStation, toStation, PNR, status);
 			if (status.equals("Ticket Confirmed")) {
@@ -94,10 +95,14 @@ public class Booking {
 
 					checkTicketAvailability(name, age, coachName, fromStation, toStation, PNR, status);
 				}
-				output.printUserChoices();
+				else {
+					output.printUserChoices();
+					inp.choiceMethod();
+				}
 			} else if (status.equals("No")) {
 				System.out.println("Thank you visit again!");
 				output.printUserChoices();
+				inp.choiceMethod();
 			}
 		}
 	}
