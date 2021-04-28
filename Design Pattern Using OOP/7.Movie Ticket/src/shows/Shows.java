@@ -1,31 +1,40 @@
 package shows;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import printer.Output;
 
-public class ShowOne implements IShows {
+public class Shows implements IShows {
+	private final int showName;
+	private final List<String> seatsAvailable;
+	private List<String> bookedSeats;
 
-	private static List<String> seatsAvailable = new ArrayList<>(
-			Arrays.asList("A1", "A2", "A3", "A4", "A5", "A6", "A9"));
-	private static List<String> bookedSeats = new ArrayList<>();
+	public Shows(int showName, List<String> seatsAvailable) {
+		this.showName = showName;
+		this.seatsAvailable = seatsAvailable;
+		this.bookedSeats = new ArrayList<>();
+	}
 
 	@Override
 	public String bookTicket(List<String> seatsYetToBooked) {
-		
+
 		Boolean flag = validateSeats(seatsYetToBooked);
-		if(flag) {
-			for(int i = 0 ; i < seatsYetToBooked.size() ; i++) {
+		if (flag) {
+			for (int i = 0; i < seatsYetToBooked.size(); i++) {
 				bookedSeats.add(seatsYetToBooked.get(i));
 			}
 			return "Successfully Booked";
-		}else {
+		} else {
 			return "Seat you selected is not available please try again. ";
 		}
 	}
 
 	@Override
 	public void printTickets() {
-		Output.displayConsoleOutputNewLine("Show 1 : ");
+		Output.displayConsoleOutputNewLine("Show " + showName);
 
 		printAvailableSeats();
 		Output.displayConsoleOutputNewLine("\n");
@@ -42,20 +51,19 @@ public class ShowOne implements IShows {
 				}
 			}
 		}
-		
+
 		if (tempList.size() == seatsYetToBooked.size()) {
-			for(Map.Entry<Integer,String> entry : tempList.entrySet()) {
+			for (Map.Entry<Integer, String> entry : tempList.entrySet()) {
 				String value = entry.getValue();
-				for(int i = 0 ; i < seatsAvailable.size() ; i++) {
-					if(value.equals(seatsAvailable.get(i))) {
+				for (int i = 0; i < seatsAvailable.size(); i++) {
+					if (value.equals(seatsAvailable.get(i))) {
 						seatsAvailable.remove(i);
 					}
 				}
 			}
-			
+
 			return true;
-		}
-		else {
+		} else {
 			for (int i = 0; i < seatsYetToBooked.size(); i++) {
 				String seats = seatsYetToBooked.get(i);
 				for (int j = 0; j < bookedSeats.size(); j++) {
@@ -71,11 +79,15 @@ public class ShowOne implements IShows {
 	@Override
 	public void printAvailableSeats() {
 		Output.displayConsoleOutputNewLine("Available Tickets : ");
-		for (int i = 0; i < seatsAvailable.size(); i++) {
-			Output.displayConsoleOutputSingleLine(seatsAvailable.get(i));
-			if (i != seatsAvailable.size() - 1) {
-				Output.displayConsoleOutputSingleLine(" , ");
+		if (seatsAvailable.size() > 0) {
+			for (int i = 0; i < seatsAvailable.size(); i++) {
+				Output.displayConsoleOutputSingleLine(seatsAvailable.get(i));
+				if (i != seatsAvailable.size() - 1) {
+					Output.displayConsoleOutputSingleLine(" , ");
+				}
 			}
+		} else {
+			Output.displayConsoleOutputSingleLine("No tickets available");
 		}
 		Output.displayConsoleOutputSingleLine("\n");
 	}
@@ -89,8 +101,21 @@ public class ShowOne implements IShows {
 				Output.displayConsoleOutputSingleLine(" , ");
 			}
 		}
-		
+
 		Output.displayConsoleOutputNewLine("\n");
+	}
+
+	@Override
+	public boolean checkTicketAvailability() {
+		if (seatsAvailable.size() > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public int getShowNumber() {
+		return showName;
 	}
 
 }
