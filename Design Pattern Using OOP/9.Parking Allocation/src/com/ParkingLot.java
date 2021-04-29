@@ -89,7 +89,6 @@ public class ParkingLot {
 		for (int i = 0; i < allocatedParkingLot.size(); i++) {
 			if (allocatedParkingLot.get(i) == parkingNumber) {
 				allocatedParkingLot.remove(i);
-				System.out.println(allocatedParkingLot.size());
 				flag = 1;
 				break;
 			}
