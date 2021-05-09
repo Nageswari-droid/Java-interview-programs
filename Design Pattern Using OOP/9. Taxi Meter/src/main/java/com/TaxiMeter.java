@@ -15,13 +15,13 @@ public class TaxiMeter {
         int distance = scanner.nextInt();
 
         System.out.println("Enter the phone number");
-        long phoneNumber = scanner.nextLong();
+        String phoneNumber = scanner.next();
 
         String result = setDistanceAndPhoneNumber(distance, phoneNumber);
         System.out.println(result);
     }
 
-    public static String setDistanceAndPhoneNumber(int distance, long phoneNumber){
+    public static String setDistanceAndPhoneNumber(int distance, String phoneNumber){
 
         int flag = 0;
         int rideCount = 0;
@@ -33,8 +33,8 @@ public class TaxiMeter {
 
         if(customerList.size() != 0){
             for(int i = 0 ; i < customerList.size() ; i++) {
-                long eachCustomerPhoneNumber = customerList.get(i).getPhoneNumber();
-                if (eachCustomerPhoneNumber == phoneNumber) {
+                String eachCustomerPhoneNumber = customerList.get(i).getPhoneNumber();
+                if (eachCustomerPhoneNumber.equals(phoneNumber)) {
                     rideCount = customerList.get(i).getRideCount();
                     customerList.get(i).addRideCount();
                     flag = 1;

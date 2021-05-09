@@ -11,13 +11,13 @@ public class TaxiMeterTest {
 
         String outputString;
 
-        outputString = TaxiMeter.setDistanceAndPhoneNumber(10, 980009800);
+        outputString = TaxiMeter.setDistanceAndPhoneNumber(10, "9800098000");
         assertEquals("Mini - Rs. 90.0, Sedan - Rs. 105.0, SUV - Rs. 131.25",outputString);
 
-        outputString = TaxiMeter.setDistanceAndPhoneNumber(20, 980009800);
+        outputString = TaxiMeter.setDistanceAndPhoneNumber(20, "9800098000");
         assertEquals("Mini - Rs. 216.0, Sedan - Rs. 260.0, SUV - Rs. 325.0",outputString);
 
-        outputString = TaxiMeter.setDistanceAndPhoneNumber(80, 980009800);
+        outputString = TaxiMeter.setDistanceAndPhoneNumber(80, "9800098000");
         assertEquals("Mini - Rs. 576.0, Sedan - Rs. 774.0, SUV - Rs. 940.5",outputString);
     }
 }

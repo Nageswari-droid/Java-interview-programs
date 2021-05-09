@@ -1,15 +1,15 @@
 package customer;
 
 public class Customer {
-    private long phoneNumber;
+    private String phoneNumber;
     private int rideCount;
 
-    public Customer(long phoneNumber){
+    public Customer(String phoneNumber){
         this.phoneNumber = phoneNumber;
         this.rideCount = 0;
     }
 
-    public long getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
 
