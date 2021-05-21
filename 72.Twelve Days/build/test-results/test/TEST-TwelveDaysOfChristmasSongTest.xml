@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TwelveDaysOfChristmasSongTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-05-20T07:01:54" hostname="LAPTOP-PPH4D9KA" time="0.042">
-  <properties/>
-  <testcase name="shouldShowEachDaySong()" classname="TwelveDaysOfChristmasSongTest" time="0.041"/>
-  <testcase name="shouldPrintTwelveDaysOfChristmasSong()" classname="TwelveDaysOfChristmasSongTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

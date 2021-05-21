@@ -1,10 +1,7 @@
-package com;
-
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class TwelveDaysOfChristmasSong {
-
+class TwelveDays {
     private final ArrayList<String> daysArray = new ArrayList<>(Arrays.asList("first",
             "second",
             "third",
@@ -30,7 +27,28 @@ public class TwelveDaysOfChristmasSong {
             "eleven Pipers Piping, ",
             "twelve Drummers Drumming, "));
 
-    public String concatSong() {
+    String verse(int verseNumber) {
+        ArrayList<String> song = songMap();
+        return song.get(verseNumber - 1);
+    }
+
+    String verses(int startVerse, int endVerse) {
+        ArrayList<String> song = songMap();
+        String concatVerses = "";
+
+        for (int i = startVerse - 1; i < endVerse; i++) {
+            StringBuilder stringBuilder = new StringBuilder();
+            if (i != endVerse - 1) {
+                concatVerses = stringBuilder.append(concatVerses).append(song.get(i)).append("\n").toString();
+            } else {
+                concatVerses = stringBuilder.append(concatVerses).append(song.get(i)).toString();
+            }
+        }
+
+        return concatVerses;
+    }
+
+    public String sing() {
         ArrayList<String> song = songMap();
         String twelveDaysSong = "";
 
@@ -61,11 +79,7 @@ public class TwelveDaysOfChristmasSong {
             StringBuilder stringBuilder = new StringBuilder();
             presents = stringBuilder.append(presentValue).append(presents).toString();
 
-            if (i != presentsArray.size() - 1) {
-                eachDaySongString = "On the " + daysArray.get(i) + " day of Christmas my true love gave to me: " + presents + "\n";
-            } else {
-                eachDaySongString = "On the " + daysArray.get(i) + " day of Christmas my true love gave to me: " + presents;
-            }
+            eachDaySongString = "On the " + daysArray.get(i) + " day of Christmas my true love gave to me: " + presents + "\n";
 
             eachDaySongList.add(eachDaySongString);
         }
@@ -74,8 +88,8 @@ public class TwelveDaysOfChristmasSong {
     }
 
     public static void main(String[] args) {
-        TwelveDaysOfChristmasSong twelveDaysOfChristmasSong = new TwelveDaysOfChristmasSong();
-        String twelveDaysSongOutput = twelveDaysOfChristmasSong.concatSong();
+        TwelveDays twelveDays = new TwelveDays();
+        String twelveDaysSongOutput = twelveDays.sing();
         System.out.println(twelveDaysSongOutput);
     }
 }
